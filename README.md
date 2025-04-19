@@ -66,15 +66,6 @@ python receptor.py
 
 ---
 
-## 🔧 **Código Útil**
-```python
-# Redimensionamento via Python
-from PIL import Image
-Image.open("imagem.png").resize((128, 128)).save("imagem_128x128.png")
-```
-
----
-
 ## 🌟 **Inspiração**
 - Comunicação acústica submarina
 - Modems antigos (300 baud)
