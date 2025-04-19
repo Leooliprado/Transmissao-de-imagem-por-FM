@@ -1,42 +1,51 @@
-# 📡 SonicImage – Transmissão de Imagens via Áudio (FM)
+### 📌 **Visão Geral do Projeto**
+- **Objetivo**: Transmitir imagens usando ondas sonoras (Data over Sound), útil para comunicação sem internet, transferência entre dispositivos simples ou fins educacionais.
+- **Funcionamento**:
+  - **Transmissor**: Converte valores de cor (RGB) de uma imagem em tons de áudio (frequências entre `400 Hz` e `2000 Hz`) e os emite via alto-falante.
+  - **Receptor**: Capta o áudio via microfone, decodifica as frequências (usando FFT) e reconstrói a imagem em tempo real.
 
-Este projeto permite **transmitir uma imagem por som** usando modulação por frequência (FM). Uma imagem é convertida em tons sonoros, transmitida via alto-falante e reconstruída em tempo real com o microfone.
+### 🛠️ **Configuração Necessária**
+- **Python 3.x** + Bibliotecas:
+  ```bash
+  pip install numpy sounddevice pillow matplotlib
+  ```
+- **Passos para uso**:
+  1. Coloque uma imagem chamada `imagem.png` na pasta do projeto.
+  2. Execute o transmissor:  
+     ```bash
+     python transmissor.py
+     ```
+  3. Execute o receptor (em outro dispositivo/terminal):  
+     ```bash
+     python receptor.py
+     ```
+  - A imagem será reconstruída gradualmente e salva como `imagem_recebida.png`.
+
+### ⚙️ **Parâmetros Ajustáveis**
+| Parâmetro           | Valor Padrão   | Descrição                          |
+|---------------------|---------------|-----------------------------------|
+| `IMG_SIZE`          | `(128, 128)`  | Tamanho da imagem (redimensionada) |
+| `FS`                | `44100 Hz`    | Taxa de amostragem do áudio        |
+| `DURATION_PER_PIXEL`| `0.002 s`     | Duração de cada pixel no áudio     |
+| `F0`, `F1`          | `400-2000 Hz` | Frequências para valores 0 e 255   |
+
+### 🎨 **Exemplo de Saída**
+- A imagem recebida será exibida em tempo real e salva no final do processo.
+
+### 🔍 **Inspiração**
+- Técnicas de comunicação acústica submarina, modems antigos (ex.: 300 baud) e troca de dados por som entre dispositivos móveis.
+
+### 📜 **Licença**
+- **MIT** (livre para uso, modificação e distribuição).
+
+### 👨‍💻 **Autor**
+- Projeto desenvolvido por **Leonardo** (GitHub: [@Leooliprado](https://github.com/Leooliprado)).
 
 ---
 
-## 🎯 Objetivo
-
-Explorar formas de **comunicação acústica** (Data over Sound) simulando um protocolo simples de envio de imagens via ondas sonoras. Isso pode ser útil para:
-- Comunicação sem rede
-- Transmissão de dados entre dispositivos simples
-- Educação em sinais, áudio digital e codificação
-
----
-
-## 🧠 Como funciona
-
-1. **Transmissor:**
-   - Carrega uma imagem RGB.
-   - Converte os valores de cor (0–255) em frequências entre `F0` e `F1`.
-   - Emite essas frequências em sequência via áudio.
-
-2. **Receptor:**
-   - Grava o som recebido pelo microfone.
-   - Para cada segmento, usa FFT para extrair a frequência dominante.
-   - Reconstrói os canais RGB e monta a imagem ao vivo.
-
----
-
-## 🛠️ Requisitos
-
-- Python 3.x
-- Bibliotecas:
-  - `numpy`
-  - `sounddevice`
-  - `Pillow`
-  - `matplotlib`
-
-Instale com:
-
+Se você quiser testar ou contribuir, clone o repositório:
 ```bash
-pip install numpy sounddevice pillow matplotlib
+git clone https://github.com/Leooliprado/Transmissao-de-imagem-por-FM.git
+```
+
+Alguma dúvida específica sobre o funcionamento ou implementação? 😊
