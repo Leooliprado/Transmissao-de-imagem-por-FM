@@ -1,6 +1,4 @@
-Aqui está a versão final consolidada do README.md com todas as seções organizadas e padronizadas:
 
-```markdown
 # 📡 SonicImage – Transmissão de Imagens via Áudio (FM)
 
 Transmita imagens usando ondas sonoras! Projeto educativo para comunicação acústica entre dispositivos.
@@ -99,5 +97,4 @@ Leonardo ([GitHub @Leooliprado](https://github.com/Leooliprado))
 git clone https://github.com/Leooliprado/Transmissao-de-imagem-por-FM.git
 ```
 
-> ✨ **Dica**: Ambientes silenciosos melhoram a qualidade da transmissão!
-```
+
